@@ -1,0 +1,15 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      .row
+        .span
+          = link_to root_path, class: 'brand' do
+            | Contest Board
+        ul.nav.pull-right role='navigation'
+          li
+            - if user_signed_in?
+              = link_to destroy_user_session_path, method: :delete do
+                | Sign out
+            - else
+              = link_to new_user_session_path do
+                | Sign in
